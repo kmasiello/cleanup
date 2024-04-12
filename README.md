@@ -16,5 +16,5 @@ Optionally, put the script somewhere on your `$PATH`, e.g., `/usr/local/bin`
 
 ```
 cd target_directory_to_clean
-cleanup 
+cleanup.sh
 ```
