@@ -1,11 +1,11 @@
 #!/bin/bash
 
-## A script to remove "DS_Store" and Quarto's rendered file artifacts, "filename.html" and "filename_files"
+## A script to remove ".DS_Store" and Quarto's rendered file artifacts, "filename.html" and "filename_files"
 ## Removes files from the current directory only.
 
-# Check if there are any .qmd files or DS_Store files in the current directory
-if ! find . -maxdepth 1 \( -name "*.qmd" -o -name "DS_Store" \) -print -quit | grep -q .; then
-    echo "No .qmd files or DS_Store found in the current directory."
+# Check if there are any .qmd files or .DS_Store files in the current directory
+if ! find . -maxdepth 1 \( -name "*.qmd" -o -name ".DS_Store" \) -print -quit | grep -q .; then
+    echo "No .qmd files or .DS_Store found in the current directory."
     exit 1
 fi
 
@@ -32,9 +32,9 @@ for qmd_file in "${qmd_files[@]}"; do
     fi
 done
 
-# Add any file named "DS_Store" in the current directory to the list of files to be deleted
-if [ -f "DS_Store" ]; then
-    files_to_delete+=("DS_Store")
+# Add any file named ".DS_Store" in the current directory to the list of files to be deleted
+if [ -f ".DS_Store" ]; then
+    files_to_delete+=(".DS_Store")
 fi
 
 
